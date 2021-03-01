@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>NguyenVanTuan | About</title>
+    <link rel="icon" href="#">
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
+</head>
+
+<body id="js-scroll">
+    <header>
+        <div class="brand">
+            <a href="./index.html">Van Tuan</a>
+        </div>
+        <nav class="nav">
+            <div class="nav__item">
+                <a href="./about.html">About</a>
+            </div>
+        </nav>
+    </header>
+    <main class="about">
+        <div class="about__container" data-scroll-section>
+            <p class="about__container-data des-2" data-scroll>Hi! My name is <span>Nguyen Van Tuan</span> <br>
+                and I'm a 
+                Front-End developer,<br> born in <span>Thoi Binh,</span> Ca Mau.</p>
+
+            <p class="des-2" data-scroll>I try my hand with freelancer<br>for web development
+                </p>
+            <a class="contact-link des-2" href="mailto:tuanvan5075@gmail.com" style="text-decoration: underline; opacity: 0;" target="_blank">get
+                    in touch.</a>
+        </div>
+
+        <div class="cursor-follow"></div>
+    </main>
+	
+    <script src="./js/libs/locomotive-scroll.min.js"></script>
+	<script src="./js/libs/TweenMax.min.js"></script>
+    <script>
+        // smooth scroll 
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#js-scroll'),
+            smooth: true,
+            smoothMobile: true,
+            inertia: 0.75
+        });
+
+        // div following mouse 
+        TweenMax.from(".cursor-follow", 2, {
+            delay: 1,
+            opacity: 0
+        });
+
+        follower = document.querySelector('.cursor-follow');
+
+        posX = 0;
+        posY = 0;
+        mouseX = 0;
+        mouseY = 0;
+
+        TweenMax.to({}, 0.016, {
+            repeat: -1,
+            onRepeat: function () {
+                posX += (mouseX - posX) / 9;
+                posY += (mouseY - posY) / 9;
+
+                TweenMax.set(follower, {
+                    css: {
+                        left: posX - 40,
+                        top: posY - 40,
+                    }
+                });
+            }
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+        
+
+        TweenMax.from(".about .des-2", 2, {
+                y: 40,
+                opacity: 0,
+                rotate:15,
+                ease: Expo.easeInOut,
+                duration:.3
+            });
+            TweenMax.to(".about .des-2", 2, {
+                y: 0,
+                opacity: 1,
+                rotate:15,
+                ease: Expo.easeInOut,
+                duration:.3
+
+            });
+       
+        
+    </script>
+</body>
+
+</html>

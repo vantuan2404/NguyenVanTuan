@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>NguyenVanTuan | Speedy Car</title>
+    <link rel="icon" href="#">
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
+</head>
+
+<body id="js-scroll">
+    <header>
+        <div class="brand">
+            <a href="./index.html">Van Tuan</a>
+        </div>
+        <nav class="nav">
+            <div class="nav__item">
+                <a href="./about.html">About</a>
+            </div>
+        </nav>
+    </header>
+    <main class="project">
+        <div class="project__container" data-scroll-section>
+            <div class="project__container-title" data-scroll>
+                <h1 class="anime-js-title">Octavian 2</h1>
+            </div>
+            <div class="project__container-subtitle" data-scroll>
+                <p>Visual code</p>
+            </div>
+            <div class="project__container-visitsite" data-scroll>
+                <a href="https://vantuan2404.github.io/Octavian2/">Visit Website <img src="./img/icon-arow-next.png" alt=""></a>
+            </div>
+            <div class="project__container-images" data-scroll>
+                <div class="project__image img-one spe-1" style="width: 600px; height:500px;" data-scroll data-scroll-speed="1">
+                    <img src="./img/octavian2/octavian2.jpg" alt="">
+                </div>
+                <div class="project__image img-two" data-scroll data-scroll-speed="3">
+                    <img src="./img/octavian2/item-1.png" alt="">
+                    <div class="des des-1"style="margin-top:0%; left: -11%;">
+                        <p>Break all the Frames to Grow your Online agency.
+                        </p>
+                    </div>
+                </div>
+                <div class="project__image img-three" data-scrol data-scroll-speed="2">
+                    <img src="./img/octavian2/work-item-1.jpg" style="z-index: -1;"  alt="">
+                </div>
+                <div class="project__image img-four" data-scroll data-scroll-speed="4">
+                    <img src="./img/octavian2/work-item-2.jpg" alt="">
+                    <div class="des des-2" style="left: -20%;">
+                      <p>Creative branding , design online.
+                       </p>
+                    </div>
+                </div>
+                <div class="project__image img-five" data-scroll data-scroll-speed="1">
+                    <img src="./img/octavian2/work-item-3.jpg" alt="">
+                </div>
+            </div>
+    
+            <div class="project-next-link" data-scroll >
+                <a href="projectdetail-1.html">Next</a>
+            </div>
+    
+        </div>
+    </main>
+    <script src="./js/libs/locomotive-scroll.min.js"></script>
+    <script src="./js/libs/anime.min.js"></script>
+    <script src="./js/libs/TweenMax.min.js"></script>
+    <script src="./dest/jsmain.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+        // smooth scroll 
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#js-scroll'),
+            smooth: true,
+            multiplier:1,
+            scrollbarClass:'scrollbar',
+            smoothMobile: true,
+            inertia: 0.75,
+            reloadOnContextChange:true,
+        });
+
+        // project title animation 
+        var textWrapper = document.querySelector('.anime-js-title');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.anime-js-title .letter',
+                translateY: [60, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 600 + 30 * i
+            });
+
+        // project subtitle animation 
+        TweenMax.from(".project__container-subtitle", 2, {
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+        TweenMax.from(".project__container-visitsite", 2, {
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+
+        // project image fade 
+        TweenMax.from(".img-one", 2, {
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+    </script>
+	
+	
+</body>
+
+</html>

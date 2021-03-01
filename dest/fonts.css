@@ -1,0 +1,41 @@
+@font-face{
+    font-family:'Neu-R';
+    src: url('../font/NeueMontreal-Regular.woff') format('woff');
+    src: url('../font/NeueMontreal-Regular.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Neu-M';
+    src: url('../font/NeueMontreal-Medium.woff') format('woff');
+    src: url('../font/NeueMontreal-Medium.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Neu-I';
+    src: url('../font/NeueMontreal-Italic.woff') format('woff');
+    src: url('../font/NeueMontreal-Italic.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Neu-B';
+    src: url('../font/NeueMontreal-Bold.woff') format('woff');
+    src: url('../font/NeueMontreal-Bold.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'Gly';
+    src: url('../font/Glysa-Medium.woff') format('woff');
+    src: url('../font/Glysa-Medium.woff2') format('woff2');
+    display: fallback;
+}
+
+@font-face{
+    font-family: 'BauHau93';
+    src: url('../font/Bauhaus93.woff') format('woff');
+    src: url('../font/Bauhaus93.woff2') format('woff2');
+    display: fallback;
+}

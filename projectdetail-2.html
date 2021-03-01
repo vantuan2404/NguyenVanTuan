@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>NguyenVanTuan | Kymco</title>
+    <link rel="icon" href="#">
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
+</head>
+
+<body id="js-scroll">
+    <header>
+        <div class="brand">
+            <a href="./index.html">Van Tuan</a>
+        </div>
+        <nav class="nav">
+            <div class="nav__item">
+                <a href="./about.html">About</a>
+            </div>
+        </nav>
+    </header>
+    <main class="project">
+        <div class="project__container" data-scroll-section>
+            <div class="project__container-title" data-scroll>
+                <h1 class="anime-js-title">Kymco</h1>
+            </div>
+            <div class="project__container-subtitle" data-scroll>
+                <p>Visual code</p>
+            </div>
+            <div class="project__container-visitsite" data-scroll>
+                <a href="https://vantuan2404.github.io/Kymco/">Visit Website <img src="./img/icon-arow-next.png" alt=""></a>
+            </div>
+            <div class="project__container-images" data-scroll>
+                <div class="project__image img-one" data-scroll data-scroll-speed="1">
+                    <img src="./img/kymco/kymco.jpg" alt="">
+                </div>
+                <div class="project__image img-two" data-scroll data-scroll-speed="3">
+                    <img src="./img/kymco/kymco-img-1.png" alt="">
+                    <div class="des des-1">
+                        <p> Trong suốt hơn năm thập kỷ qua, <span>KYMCO</span> không quên sứ mệnh tạo ra các phương tiện cá nhân tiện lợi và hữu ích trong cuộc sống, từ đó giành được trái tim của người tiêu dùng trên toàn thế giới, trong đó có Việt Nam.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="project__image img-three" data-scrol data-scroll-speed="2">
+                    <img src="./img/kymco/kymco-img-3.jpg" style="width: 600px; height: 400px; top:50px; z-index:-1;" alt="">
+                </div>
+                <div class="project__image img-four" data-scroll data-scroll-speed="4">
+                    <img src="./img/kymco/kymco-img-2.jpg" alt="">
+                    <div class="des des-2">
+                       <p>Được thành lập năm 1964,<span> KYMCO</span> ban đầu được chuyển giao công nghệ từ Honda (Nhật Bản). Với công nghệ kỹ thuật từ Honda, KYMCO đã trở thành một trong những cơ sở sản xuất chất lượng cao của Honda ở nước ngoài.
+                    </p>
+                    </div>
+                </div>
+                <div class="project__image img-five" data-scroll data-scroll-speed="1">
+                    <img src="./img/kymco/kymco-img-4.jpg" style="width: 600px; height: 400px;" alt="">
+                </div>
+            </div>
+    
+            <div class="project-next-link" data-scroll>
+                <a href="projectdetail-3.html">Next</a>
+            </div>
+    
+        </div>
+    </main>
+    <script src="./js/libs/locomotive-scroll.min.js"></script>
+    <script src="./js/libs/anime.min.js"></script>
+    <script src="./js/libs/TweenMax.min.js"></script>
+    <script src="./dest/jsmain.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+        // smooth scroll 
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#js-scroll'),
+            smooth: true,
+            smoothMobile: true,
+            inertia: 0.75,
+            reloadOnContextChange:true,
+        });
+
+        // project title animation 
+        var textWrapper = document.querySelector('.anime-js-title');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.anime-js-title .letter',
+                translateY: [60, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 600 + 30 * i
+            });
+
+        // project subtitle animation 
+        TweenMax.from(".project__container-subtitle", 2, {
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+        TweenMax.from(".project__container-visitsite", 2, {
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+
+        // project image fade 
+        TweenMax.from(".img-one", 2, {
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+    </script>
+	
+	
+</body>
+
+</html>
